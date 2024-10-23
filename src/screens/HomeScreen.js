@@ -20,33 +20,17 @@ export default function Home(){
         <SafeAreaView style={styles.container}>
             
                 
-                    <View style={styles.userIconAndName}>
-                        <Text style={styles.icon}>Y</Text>
-                        <Text style = {styles.userName}>Yuri →</Text>
-                    </View>
-                    <FlatList
-                        data={cardsHome}
-                        keyExtractor={(item) => item.id}
-                        renderItem={({item}) =>(
-                            <BigCard cardList={item} />
-                        )}
-                    />
-                    {/* <View style={styles.investmentContainer}>
-                        <Text style={styles.investmentTitle}>Investimentos</Text>
-                        
-                        <View style={styles.investmentCard}>
-                            <Image style={styles.brazilFlag} source={require('../img/2-bandeira-do-brasil.webp')}/>
-                            <Text style={styles.investmentSubTitle}>  Investimento Nacional </Text>
-                            <Text style={styles.investmentDescription}>  Total investido + Conta investimento </Text>
-                            <Text style={styles.investmentValue}>R$150,00</Text>
-                            <View style={styles.investmentPercentAndMonth}>
-                                <Text style={styles.investmentPercent}>Aguardando confirmação</Text>
-                                <Text style={styles.investmentMonth}>(12 meses)</Text>
-                                <Image /> Gráfico
-                            </View>
-                            
-                        </View>
-                    </View> */}
+            <View style={styles.userIconAndName}>
+                <Text style={styles.icon}>Y</Text>
+                <Text style = {styles.userName}>Yuri →</Text>
+            </View>
+            <FlatList
+                data={cardsHome}
+                keyExtractor={(item) => item.id}
+                renderItem={({item}) =>(
+                    <BigCard cardList={item} />
+                )}
+            />
             
         </SafeAreaView>
     )
@@ -54,10 +38,32 @@ export default function Home(){
 
 const styles = StyleSheet.create({
 
-    // brazilFlag: {
-    //     width: 32,
-    //     height: 32,
-    //     borderRadius: 50,
-    // }
+   container: {
+    flex: 1,
+    backgroundColor: '#000',
+   },
+
+   icon:{
+    fontSize: 24,
+    backgroundColor: '#525252',
+    color: '#fff',
+    width:32,
+    textAlign: 'center',
+    borderRadius: 50
+   },
+
+   userName:{
+    fontSize: 18,
+    color: '#fff',
+    fontWeight: 'bold'
+   },
+   
+   userIconAndName:{
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 16,
+    marginTop: 16,
+    gap: 8,
+   },
 
 })

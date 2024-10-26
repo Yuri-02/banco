@@ -10,19 +10,19 @@ export default function BigCard({cardList}){
             
             <View style={styles.infoContainer}>
                 <Text style={styles.title}>{cardList.title}</Text>
-                
-                <View style={styles.investmentCard}>
-                    < Image style={styles.flag} source = {{uri: cardList.brazilFlag}} />
-                    <Text style={styles.investmentSubTitle}>{cardList.subTitle}</Text>
+                <View style={styles.card}>   
+                    <View style={styles.investmentCard}>
+                        < Image style={styles.flag} source = {{uri: cardList.brazilFlag}} />
+                        <Text style={styles.investmentSubTitle}>{cardList.subTitle}</Text>
+                    </View>
+                    <Text style={styles.investmentDescription}>{cardList.description}</Text>
+                    <Text style={styles.investmentValue}>{cardList.value}</Text>
+                    <View style={styles.investmentPercentAndMonth}>
+                        <Text style={styles.investmentPercent}>{cardList.percent}</Text>
+                        <Text style={styles.investmentMonth}>{cardList.month}</Text>
+                        {/* <Image /> Gráfico */}
+                    </View>
                 </View>
-                <Text style={styles.investmentDescription}>{cardList.description}</Text>
-                <Text style={styles.investmentValue}>{cardList.value}</Text>
-                <View style={styles.investmentPercentAndMonth}>
-                    <Text style={styles.investmentPercent}>{cardList.percent}</Text>
-                    <Text style={styles.investmentMonth}>{cardList.month}</Text>
-                    {/* <Image /> Gráfico */}
-                </View>
-
             </View>
         </View>
     )
@@ -30,7 +30,11 @@ export default function BigCard({cardList}){
 
 const styles = StyleSheet.create({
     container:{
-        backgroundColor: '#525252',
+        padding: 12
+    },
+
+    card:{
+        backgroundColor: '#171717',
         borderRadius: 10,
         padding: 20,
     },
